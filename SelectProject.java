@@ -56,6 +56,7 @@ public class SelectProject {
 						if(flag && Integer.parseInt(values[c]) < Integer.parseInt(a[2])) {
 							if(!results.contains(line1)) {results.add(line1);}
 						}else {
+							flag = false;
 							if(results.contains(line1)) {results.remove(line1);
 							flag= false;
 							break;
@@ -67,6 +68,7 @@ public class SelectProject {
 						if(flag && values[c].equalsIgnoreCase(a[2])) {
 							if(!results.contains(line1)) {results.add(line1);}
 						}else {
+							flag = false;
 							if(results.contains(line1)) {results.remove(line1);
 							flag=false;
 							break;
@@ -79,6 +81,7 @@ public class SelectProject {
 						if(flag && Integer.parseInt(values[c]) > Integer.parseInt(a[2])) {
 							if(!results.contains(line1)) {results.add(line1);}
 						}else {
+							flag = false;
 							if(results.contains(line1)) {results.remove(line1);
 							flag= false;
 							break;
@@ -90,6 +93,7 @@ public class SelectProject {
 						if(flag && Integer.parseInt(values[c]) <= Integer.parseInt(a[2])) {
 							if(!results.contains(line1)) {results.add(line1);}
 						}else {
+							flag = false;
 							if(results.contains(line1)) {results.remove(line1);
 							flag =false;
 							break;
@@ -98,10 +102,12 @@ public class SelectProject {
 						}
 
 					}
+					break;
 					case "ge" : {
 						if(flag && Integer.parseInt(values[c]) >= Integer.parseInt(a[2])) {
 							if(!results.contains(line1)) {results.add(line1);}
 						}else {
+							flag = false;
 							if(results.contains(line1)) {results.remove(line1);
 							flag = false;
 							break;
@@ -138,7 +144,7 @@ public class SelectProject {
 
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
-			System.out.println("ERROR!");	
+			System.out.println(e.toString());	
 		}
 
 	}
